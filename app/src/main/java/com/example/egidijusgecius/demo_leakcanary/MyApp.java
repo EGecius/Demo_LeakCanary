@@ -12,9 +12,15 @@ public class MyApp extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+
+        trackForMemoryLeaks();
 	}
 
-	/** Used to leak objects to test how LeakCanary works */
+    private void trackForMemoryLeaks() {
+        new LeakCanaryWrapper(this).installWithExclusions(ChildActivity.class);
+    }
+
+    /** Used to leak objects to test how LeakCanary works */
 	public void leakObject(Object object) {
 		leakedObjects.add(object);
 	}
