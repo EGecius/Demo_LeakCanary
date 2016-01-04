@@ -32,7 +32,7 @@ public class LeakCanaryWrapper {
 	}
 
     /**
-     * Installs LeakCanary with a list of Activities not to track
+     * Installs LeakCanary with a list of Activities that will be excluded from tracking
      * @param activities Activities that should not be tracked for memory leaks
      * @return object that should be added references to
      */
