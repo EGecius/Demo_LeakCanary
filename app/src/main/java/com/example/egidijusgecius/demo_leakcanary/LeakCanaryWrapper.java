@@ -17,8 +17,11 @@ import com.squareup.leakcanary.ServiceHeapDumpListener;
  */
 public class LeakCanaryWrapper {
 
-	private Application app;
+	private final Application app;
 
+    /**
+     * @param app application object
+     */
 	public LeakCanaryWrapper(Application app) {
 		this.app = app;
 	}
